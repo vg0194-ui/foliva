@@ -13,7 +13,17 @@
   }
 
   document.title = `${product.name} | Foliva`;
-  document.querySelector("[data-product-name]").textContent = product.name;
+  let descriptionMeta = document.querySelector('meta[name="description"]');
+  if (!descriptionMeta) {
+    descriptionMeta = document.createElement("meta");
+    descriptionMeta.name = "description";
+    document.head.append(descriptionMeta);
+  }
+  descriptionMeta.setAttribute("content", product.description);
+
+  document.querySelectorAll("[data-product-name]").forEach((node) => {
+    node.textContent = product.name;
+  });
   document.querySelector("[data-product-category]").textContent = product.category;
   document.querySelector("[data-product-description]").textContent = product.description;
   document.querySelector("[data-product-type]").textContent = product.type;
@@ -24,6 +34,10 @@
   const hero = document.querySelector("[data-product-hero]");
   if (hero) {
     hero.style.background = product.palette;
+    const image = document.createElement("img");
+    image.src = product.image;
+    image.alt = product.imageAlt;
+    hero.replaceChildren(image);
   }
 
   const detailLink = document.querySelector("[data-product-whatsapp]");
@@ -47,6 +61,43 @@
     li.textContent = item;
     includes.append(li);
   });
+
+  const detailShell = document.querySelector(".detail-layout");
+  const inquirySection = document.querySelector(".detail-layout .detail-columns:last-of-type");
+  if (detailShell && inquirySection) {
+    const extendedSection = document.createElement("section");
+    extendedSection.className = "detail-sections-grid";
+
+    const specificationRows = product.specifications
+      .map(
+        (item) => `
+          <tr>
+            <th scope="row">${item.label}</th>
+            <td>${item.value}</td>
+          </tr>
+        `
+      )
+      .join("");
+
+    const applicationRows = product.applicationNotes
+      .map((item) => `<li>${item}</li>`)
+      .join("");
+
+    extendedSection.innerHTML = `
+      <article class="panel spec-card">
+        <h2>Composition & specification</h2>
+        <table class="spec-table">
+          <tbody>${specificationRows}</tbody>
+        </table>
+      </article>
+      <article class="panel application-card">
+        <h2>Application & pack guidance</h2>
+        <ul class="application-list">${applicationRows}</ul>
+      </article>
+    `;
+
+    detailShell.insertBefore(extendedSection, inquirySection);
+  }
 
   const form = document.querySelector(".inquiry-form");
   if (form) {

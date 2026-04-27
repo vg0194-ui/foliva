@@ -20,19 +20,35 @@
     categoryFilter.append(option);
   });
 
+  function createSpecSummary(product) {
+    return product.specifications
+      .slice(0, 2)
+      .map((item) => `${item.label}: ${item.value}`)
+      .join(" • ");
+  }
+
   function render() {
     const category = categoryFilter.value;
     const query = searchInput.value.trim().toLowerCase();
 
     const visibleProducts = site.products.filter((product) => {
+      const searchableText = [
+        product.name,
+        product.category,
+        product.focus,
+        product.type,
+        product.description,
+        product.crops,
+        ...product.benefits,
+        ...product.includes,
+        ...product.applicationNotes,
+        ...product.specifications.map((item) => `${item.label} ${item.value}`)
+      ]
+        .join(" ")
+        .toLowerCase();
+
       const matchesCategory = category === "all" || product.category === category;
-      const matchesQuery =
-        !query ||
-        product.name.toLowerCase().includes(query) ||
-        product.category.toLowerCase().includes(query) ||
-        product.focus.toLowerCase().includes(query) ||
-        product.description.toLowerCase().includes(query) ||
-        product.crops.toLowerCase().includes(query);
+      const matchesQuery = !query || searchableText.includes(query);
 
       return matchesCategory && matchesQuery;
     });
@@ -43,25 +59,29 @@
       const emptyState = document.createElement("div");
       emptyState.className = "empty-state";
       emptyState.innerHTML =
-        "<h3>No products found</h3><p>Try another crop type, category, or product keyword.</p>";
+        "<h3>No products found</h3><p>Try another crop, category, nutrient or application keyword.</p>";
       grid.append(emptyState);
       return;
     }
 
-    visibleProducts.forEach((product, index) => {
+    visibleProducts.forEach((product) => {
       const card = template.content.cloneNode(true);
-      const article = card.querySelector(".product-card");
       const visual = card.querySelector(".product-visual");
       const detailsLink = card.querySelector(".product-details-link");
+      const image = document.createElement("img");
+      image.src = product.image;
+      image.alt = product.imageAlt;
+      image.loading = "lazy";
 
       visual.style.background = product.palette;
-      article.style.animationDelay = `${index * 55}ms`;
+      visual.append(image);
+
       card.querySelector(".product-badge").textContent = product.tag;
       card.querySelector("h3").textContent = product.name;
       card.querySelector(".price").textContent = product.type;
       card.querySelector(".description").textContent = product.description;
       card.querySelector(".category").textContent = product.category;
-      card.querySelector(".material").textContent = product.focus;
+      card.querySelector(".material").textContent = createSpecSummary(product);
       detailsLink.href = `${product.slug}.html`;
 
       grid.append(card);

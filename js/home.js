@@ -1,46 +1,423 @@
 (function () {
   const site = window.FOLIVA_SITE;
-  const grid = document.querySelector("#featuredProductsGrid");
-  const template = document.querySelector("#productCardTemplate");
-
-  if (!site || !grid || !template) {
+  if (!site) {
     return;
   }
 
-  site.products.slice(0, 6).forEach((product, index) => {
-    const card = template.content.cloneNode(true);
-    const article = card.querySelector(".product-card");
-    const visual = card.querySelector(".product-visual");
-    const detailsLink = card.querySelector(".product-details-link");
-    const inquiryButton = card.querySelector(".product-inquiry-button");
+  const heroSlides = [
+    {
+      title: "Science-led crop nutrition with a cleaner international agribusiness presence.",
+      copy:
+        "Foliva now presents its crop nutrition and soil health portfolio through a more premium corporate language shaped for growers, dealers and modern agricultural channel partners.",
+      image: "brochure_extract/images/page-001-02-Im1.jpg",
+      chips: ["Crop nutrition", "Soil health", "International brand language"],
+      stats: [
+        { value: "4", label: "Core product platforms" },
+        { value: "20", label: "Catalogue-backed solutions" },
+        { value: "1", label: "Integrated inquiry journey" }
+      ],
+      primaryHref: "products/index.html",
+      primaryLabel: "Explore product solutions",
+      secondaryHref: "#contact",
+      secondaryLabel: "Connect with Foliva"
+    },
+    {
+      title: "Structured foliar, water soluble and crop-kit pathways for field performance.",
+      copy:
+        "From flowering support and fruit set to soil conditioning and crop-specific kits, the website now helps visitors move from crop challenge to solution discovery with more confidence.",
+      image: "brochure_extract/images/page-001-03-Im2.jpg",
+      chips: ["Foliar programs", "Water soluble nutrition", "Crop-specific kits"],
+      stats: [
+        { value: "2-5", label: "Application windows on key products" },
+        { value: "1 Acre", label: "Standard kit positioning" },
+        { value: "100%", label: "Catalogue-led product visuals" }
+      ],
+      primaryHref: "Foliva-Product-Catalogue-2024.pdf",
+      primaryLabel: "Download catalogue",
+      secondaryHref: "#product-showcase",
+      secondaryLabel: "View pack showcase"
+    },
+    {
+      title: "A modern digital front door for agronomy, dealer enablement and brand trust.",
+      copy:
+        "The upgraded experience adds stronger content hierarchy, advisory sections, product compositions and a more credible corporate story inspired by leading global agriscience websites.",
+      image: "brochure_extract/images/page-001-04-Im3.jpg",
+      chips: ["Dealer-ready", "Advisory-led", "Premium UI system"],
+      stats: [
+        { value: "3", label: "Insight themes launched" },
+        { value: "4", label: "Corporate trust pillars" },
+        { value: "24/7", label: "Digital discovery availability" }
+      ],
+      primaryHref: "insights/index.html",
+      primaryLabel: "Visit knowledge centre",
+      secondaryHref: "#innovation",
+      secondaryLabel: "See innovation story"
+    }
+  ];
 
-    visual.style.background = product.palette;
-    article.style.animationDelay = `${index * 65}ms`;
-    card.querySelector(".product-badge").textContent = product.tag;
-    card.querySelector("h3").textContent = product.name;
-    card.querySelector(".price").textContent = product.type;
-    card.querySelector(".description").textContent = product.description;
-    card.querySelector(".category").textContent = product.category;
-    card.querySelector(".material").textContent = product.focus;
-    detailsLink.href = `products/${product.slug}.html`;
+  const testimonials = [
+    {
+      quote:
+        "The upgraded presentation helps the brand feel more credible and more useful for dealer conversations, especially when product families and application logic are clearly structured.",
+      name: "Channel Enablement Perspective",
+      role: "Dealer communication use case"
+    },
+    {
+      quote:
+        "When a grower can move from crop need to product composition to inquiry in one journey, the website starts behaving more like a commercial agronomy platform than a static brochure.",
+      name: "Digital Agronomy Perspective",
+      role: "Crop advisory use case"
+    },
+    {
+      quote:
+        "Professional hierarchy, better visuals and real pack references make the portfolio easier to discuss with confidence across field teams, progressive growers and retail partners.",
+      name: "Brand Stewardship Perspective",
+      role: "Premium trust communication"
+    }
+  ];
 
-    inquiryButton.addEventListener("click", () => {
+  const cropSolutions = [
+    {
+      title: "Vegetables",
+      copy: "Flowering-to-fruit-fill support with kit-led and foliar nutrition pathways.",
+      image: "brochure_extract/images/page-001-04-Im3.jpg"
+    },
+    {
+      title: "Paddy",
+      copy: "Zinc, reproductive stage support and kit structures for crop quality and resilience.",
+      image: "brochure_extract/images/page-001-03-Im2.jpg"
+    },
+    {
+      title: "Fruits",
+      copy: "Programs positioned around fruit set, size, colour and productivity support.",
+      image: "brochure_extract/images/page-001-02-Im1.jpg"
+    },
+    {
+      title: "Pulses & Oilseeds",
+      copy: "Grain fill, oil percentage and leaf development support through focused combinations.",
+      image: "brochure_extract/images/page-001-03-Im2.jpg"
+    }
+  ];
+
+  const featuredProducts = [
+    "folistar-wonder",
+    "folistar-tarzen",
+    "folivita-boronated-calcium-nitrate",
+    "folivita-zinc-sulphate",
+    "folizyme-crop-plus",
+    "folikit-vegetable"
+  ]
+    .map((slug) => site.products.find((product) => product.slug === slug))
+    .filter(Boolean);
+
+  function createDots(container, total, onSelect) {
+    container.replaceChildren();
+    return Array.from({ length: total }, (_, index) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.setAttribute("aria-label", `Go to slide ${index + 1}`);
+      button.addEventListener("click", () => onSelect(index));
+      container.append(button);
+      return button;
+    });
+  }
+
+  function mountHeroSlider() {
+    const frame = document.querySelector("#heroSlider");
+    const dotsHost = document.querySelector("#heroSliderDots");
+
+    if (!frame || !dotsHost) {
+      return;
+    }
+
+    const slides = heroSlides.map((slide, index) => {
+      const article = document.createElement("article");
+      article.className = "hero-slide";
+      article.innerHTML = `
+        <div class="hero-slide-media" style="background-image:url('${slide.image}')"></div>
+        <div class="hero-slide-copy">
+          <div>
+            <p class="hero-kicker">Foliva corporate platform</p>
+            <h1 class="hero-slide-title">${slide.title}</h1>
+            <p>${slide.copy}</p>
+            <div class="hero-chip-row">
+              ${slide.chips.map((item) => `<span>${item}</span>`).join("")}
+            </div>
+          </div>
+          <div>
+            <div class="hero-actions">
+              <a class="button button-primary" href="${slide.primaryHref}">${slide.primaryLabel}</a>
+              <a class="button button-secondary" href="${slide.secondaryHref}">${slide.secondaryLabel}</a>
+            </div>
+            <div class="hero-slide-metrics">
+              ${slide.stats
+                .map(
+                  (stat) => `
+                    <article>
+                      <strong>${stat.value}</strong>
+                      <span>${stat.label}</span>
+                    </article>
+                  `
+                )
+                .join("")}
+            </div>
+          </div>
+        </div>
+      `;
+      if (index === 0) {
+        article.classList.add("is-active");
+      }
+      frame.append(article);
+      return article;
+    });
+
+    let activeIndex = 0;
+    const dots = createDots(dotsHost, slides.length, (index) => {
+      activeIndex = index;
+      render();
+      restart();
+    });
+
+    function render() {
+      slides.forEach((slide, index) => {
+        slide.classList.toggle("is-active", index === activeIndex);
+      });
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("is-active", index === activeIndex);
+      });
+    }
+
+    let timer = window.setInterval(next, 5500);
+
+    function next() {
+      activeIndex = (activeIndex + 1) % slides.length;
+      render();
+    }
+
+    function restart() {
+      window.clearInterval(timer);
+      timer = window.setInterval(next, 5500);
+    }
+
+    frame.addEventListener("mouseenter", () => window.clearInterval(timer));
+    frame.addEventListener("mouseleave", restart);
+    render();
+  }
+
+  function mountProductShowcase() {
+    const track = document.querySelector("#productShowcaseTrack");
+    const dotsHost = document.querySelector("#productShowcaseDots");
+
+    if (!track || !dotsHost || featuredProducts.length === 0) {
+      return;
+    }
+
+    const cards = featuredProducts.map((product, index) => {
+      const article = document.createElement("article");
+      article.className = "showcase-card";
+      article.innerHTML = `
+        <div class="showcase-art" style="background:${product.palette}">
+          <img src="${product.imageHome}" alt="${product.imageAlt}" loading="lazy" />
+        </div>
+        <div class="showcase-copy">
+          <p class="eyebrow">${product.category}</p>
+          <h3>${product.name}</h3>
+          <p>${product.description}</p>
+          <div class="product-meta">
+            <span>${product.type}</span>
+            <span>${product.focus}</span>
+          </div>
+          <ul class="detail-summary">
+            ${product.specifications.slice(0, 3).map((item) => `<li>${item.label}: ${item.value}</li>`).join("")}
+          </ul>
+          <div class="product-actions">
+            <a class="button button-secondary" href="products/${product.slug}.html">View details</a>
+            <button class="button button-primary" type="button" data-product-name="${product.name}">Inquire now</button>
+          </div>
+        </div>
+      `;
+      if (index === 0) {
+        article.classList.add("is-active");
+      }
+      track.append(article);
+      return article;
+    });
+
+    let activeIndex = 0;
+    const dots = createDots(dotsHost, cards.length, (index) => {
+      activeIndex = index;
+      render();
+      restart();
+    });
+
+    function render() {
+      cards.forEach((card, index) => {
+        card.classList.toggle("is-active", index === activeIndex);
+      });
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("is-active", index === activeIndex);
+      });
+    }
+
+    function seedInquiry(productName) {
       const form = document.querySelector(".inquiry-form");
       if (!form) {
         return;
       }
 
+      const product = site.products.find((item) => item.name === productName);
       const select = form.querySelector('select[name="product"]');
       const messageField = form.querySelector('[name="message"]');
+
       if (select) {
-        select.value = product.name;
+        select.value = productName;
       }
-      if (messageField && !messageField.value.trim()) {
+
+      if (messageField && product && !messageField.value.trim()) {
         messageField.value = `I would like more details about ${product.name} for ${product.crops}`;
       }
-      document.querySelector("#contact").scrollIntoView({ behavior: "smooth", block: "start" });
+
+      document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    track.querySelectorAll("[data-product-name]").forEach((button) => {
+      button.addEventListener("click", () => seedInquiry(button.dataset.productName || ""));
     });
 
-    grid.append(card);
-  });
+    let timer = window.setInterval(next, 4800);
+
+    function next() {
+      activeIndex = (activeIndex + 1) % cards.length;
+      render();
+    }
+
+    function restart() {
+      window.clearInterval(timer);
+      timer = window.setInterval(next, 4800);
+    }
+
+    track.addEventListener("mouseenter", () => window.clearInterval(timer));
+    track.addEventListener("mouseleave", restart);
+    render();
+  }
+
+  function mountTestimonials() {
+    const track = document.querySelector("#testimonialTrack");
+    const dotsHost = document.querySelector("#testimonialDots");
+
+    if (!track || !dotsHost) {
+      return;
+    }
+
+    const cards = testimonials.map((testimonial, index) => {
+      const article = document.createElement("article");
+      article.className = "testimonial-card";
+      article.innerHTML = `
+        <blockquote>“${testimonial.quote}”</blockquote>
+        <div>
+          <cite>${testimonial.name}</cite>
+          <p>${testimonial.role}</p>
+        </div>
+      `;
+      if (index === 0) {
+        article.classList.add("is-active");
+      }
+      track.append(article);
+      return article;
+    });
+
+    let activeIndex = 0;
+    const dots = createDots(dotsHost, cards.length, (index) => {
+      activeIndex = index;
+      render();
+      restart();
+    });
+
+    function render() {
+      cards.forEach((card, index) => {
+        card.classList.toggle("is-active", index === activeIndex);
+      });
+      dots.forEach((dot, index) => {
+        dot.classList.toggle("is-active", index === activeIndex);
+      });
+    }
+
+    let timer = window.setInterval(next, 6200);
+
+    function next() {
+      activeIndex = (activeIndex + 1) % cards.length;
+      render();
+    }
+
+    function restart() {
+      window.clearInterval(timer);
+      timer = window.setInterval(next, 6200);
+    }
+
+    track.addEventListener("mouseenter", () => window.clearInterval(timer));
+    track.addEventListener("mouseleave", restart);
+    render();
+  }
+
+  function mountCropSolutions() {
+    const track = document.querySelector("#cropSolutionsTrack");
+    if (!track) {
+      return;
+    }
+
+    cropSolutions.forEach((solution) => {
+      const article = document.createElement("article");
+      article.className = "crop-card";
+      article.style.backgroundImage = `url('${solution.image}')`;
+      article.innerHTML = `
+        <p class="eyebrow">Featured crop</p>
+        <h3>${solution.title}</h3>
+        <p>${solution.copy}</p>
+      `;
+      track.append(article);
+    });
+  }
+
+  function mountCounters() {
+    const counters = document.querySelectorAll("[data-counter]");
+    if (counters.length === 0) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          const element = entry.target;
+          const target = Number(element.getAttribute("data-counter") || "0");
+          const duration = 1300;
+          const start = performance.now();
+
+          function tick(now) {
+            const progress = Math.min((now - start) / duration, 1);
+            const value = Math.round(target * (1 - Math.pow(1 - progress, 3)));
+            element.textContent = target >= 1000 ? value.toLocaleString() : String(value);
+            if (progress < 1) {
+              requestAnimationFrame(tick);
+            }
+          }
+
+          requestAnimationFrame(tick);
+          observer.unobserve(element);
+        });
+      },
+      { threshold: 0.4 }
+    );
+
+    counters.forEach((counter) => observer.observe(counter));
+  }
+
+  mountHeroSlider();
+  mountProductShowcase();
+  mountTestimonials();
+  mountCropSolutions();
+  mountCounters();
 })();
