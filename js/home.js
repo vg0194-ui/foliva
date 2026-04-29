@@ -6,15 +6,15 @@
 
   const heroSlides = [
     {
-      title: "Science-led crop nutrition with a cleaner international agribusiness presence.",
+      title: "Empowering Soil, Empowering Growth through sustainable crop nutrition.",
       copy:
-        "Foliva now presents its crop nutrition and soil health portfolio through a more premium corporate language shaped for growers, dealers and modern agricultural channel partners.",
-      image: "brochure_extract/images/page-001-02-Im1.jpg",
-      chips: ["Crop nutrition", "Soil health", "International brand language"],
+        "Foliva positions itself as a trusted partner in sustainable agriculture with fertilizer solutions focused on healthier ecosystems, better crop yields and long-term farming productivity.",
+      image: "brochure_extract/images/page-001-04-Im3.jpg",
+      chips: ["Sustainable agriculture", "Crop nutrition", "Soil health"],
       stats: [
         { value: "4", label: "Core product platforms" },
-        { value: "20", label: "Catalogue-backed solutions" },
-        { value: "1", label: "Integrated inquiry journey" }
+        { value: "20", label: "Products in the 2024 catalogue" },
+        { value: "28", label: "Catalogue pages" }
       ],
       primaryHref: "products/index.html",
       primaryLabel: "Explore product solutions",
@@ -22,15 +22,16 @@
       secondaryLabel: "Connect with Foliva"
     },
     {
-      title: "Structured foliar, water soluble and crop-kit pathways for field performance.",
+      title: "Four product families built around diverse farming needs.",
       copy:
-        "From flowering support and fruit set to soil conditioning and crop-specific kits, the website now helps visitors move from crop challenge to solution discovery with more confidence.",
+        "The Foliva range spans FoliStar water soluble liquid fertilizers, FoliVita water soluble fertilizers, FoliZyme soil conditioners and FoliKit crop-specific fertilizer kits.",
       image: "brochure_extract/images/page-001-03-Im2.jpg",
-      chips: ["Foliar programs", "Water soluble nutrition", "Crop-specific kits"],
+      chips: ["FoliStar", "FoliVita", "FoliZyme", "FoliKit"],
       stats: [
-        { value: "2-5", label: "Application windows on key products" },
+        { value: "10", label: "Liquid and water soluble fertilizer products" },
+        { value: "8", label: "Crop-specific fertilizer kits" },
         { value: "1 Acre", label: "Standard kit positioning" },
-        { value: "100%", label: "Catalogue-led product visuals" }
+        { value: "2", label: "Granular soil conditioner products" }
       ],
       primaryHref: "Foliva-Product-Catalogue-2024.pdf",
       primaryLabel: "Download catalogue",
@@ -38,18 +39,18 @@
       secondaryLabel: "View pack showcase"
     },
     {
-      title: "A modern digital front door for agronomy, dealer enablement and brand trust.",
+      title: "Innovation, sustainability and environmental stewardship at the core.",
       copy:
-        "The upgraded experience adds stronger content hierarchy, advisory sections, product compositions and a more credible corporate story inspired by leading global agriscience websites.",
-      image: "brochure_extract/images/page-001-04-Im3.jpg",
-      chips: ["Dealer-ready", "Advisory-led", "Premium UI system"],
+        "Foliva highlights research and development, advanced fertilizer solutions, natural ingredients and beneficial microorganisms to optimize nutrient uptake and improve soil health.",
+      image: "brochure_extract/images/page-001-02-Im1.jpg",
+      chips: ["Innovation", "Environmental stewardship", "Nutrient uptake"],
       stats: [
-        { value: "3", label: "Insight themes launched" },
-        { value: "4", label: "Corporate trust pillars" },
-        { value: "24/7", label: "Digital discovery availability" }
+        { value: "5", label: "FoliStar products" },
+        { value: "5", label: "FoliVita products" },
+        { value: "2", label: "FoliZyme products" }
       ],
-      primaryHref: "insights/index.html",
-      primaryLabel: "Visit knowledge centre",
+      primaryHref: "#innovation",
+      primaryLabel: "Explore Foliva principles",
       secondaryHref: "#innovation",
       secondaryLabel: "See innovation story"
     }
@@ -58,21 +59,21 @@
   const testimonials = [
     {
       quote:
-        "The upgraded presentation helps the brand feel more credible and more useful for dealer conversations, especially when product families and application logic are clearly structured.",
-      name: "Channel Enablement Perspective",
-      role: "Dealer communication use case"
+        "Foliva is committed to revolutionizing the way fertilizers are produced and used to promote healthier ecosystems and enhance crop yields.",
+      name: "Sustainable Agriculture",
+      role: "From the Foliva catalogue"
     },
     {
       quote:
-        "When a grower can move from crop need to product composition to inquiry in one journey, the website starts behaving more like a commercial agronomy platform than a static brochure.",
-      name: "Digital Agronomy Perspective",
-      role: "Crop advisory use case"
+        "Founded on the principles of innovation, sustainability and environmental stewardship, Foliva offers fertilizers for diverse farming needs.",
+      name: "Company Principles",
+      role: "From the About Us section"
     },
     {
       quote:
-        "Professional hierarchy, better visuals and real pack references make the portfolio easier to discuss with confidence across field teams, progressive growers and retail partners.",
-      name: "Brand Stewardship Perspective",
-      role: "Premium trust communication"
+        "Foliva's development approach combines research, natural ingredients, beneficial microorganisms and innovative technologies to optimize nutrient uptake and improve soil health.",
+      name: "Research & Development",
+      role: "From the Foliva catalogue"
     }
   ];
 
@@ -313,7 +314,7 @@
       const article = document.createElement("article");
       article.className = "testimonial-card";
       article.innerHTML = `
-        <blockquote>“${testimonial.quote}”</blockquote>
+        <blockquote>${testimonial.quote}</blockquote>
         <div>
           <cite>${testimonial.name}</cite>
           <p>${testimonial.role}</p>
