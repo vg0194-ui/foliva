@@ -3,11 +3,14 @@
   const navMenu = document.querySelector("#navMenu");
 
   if (navToggle && navMenu) {
+    navToggle.setAttribute("aria-label", "Open navigation menu");
+
     navToggle.addEventListener("click", () => {
       const nextState = !navMenu.classList.contains("is-open");
       navMenu.classList.toggle("is-open", nextState);
       document.body.classList.toggle("menu-open", nextState);
       navToggle.setAttribute("aria-expanded", String(nextState));
+      navToggle.setAttribute("aria-label", nextState ? "Close navigation menu" : "Open navigation menu");
     });
 
     navMenu.querySelectorAll("a").forEach((link) => {
@@ -15,6 +18,7 @@
         navMenu.classList.remove("is-open");
         document.body.classList.remove("menu-open");
         navToggle.setAttribute("aria-expanded", "false");
+        navToggle.setAttribute("aria-label", "Open navigation menu");
       });
     });
 
@@ -23,6 +27,7 @@
         navMenu.classList.remove("is-open");
         document.body.classList.remove("menu-open");
         navToggle.setAttribute("aria-expanded", "false");
+        navToggle.setAttribute("aria-label", "Open navigation menu");
       }
     });
   }

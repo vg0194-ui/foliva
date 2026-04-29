@@ -64,8 +64,9 @@
 
   const detailShell = document.querySelector(".detail-layout");
   const inquirySection = document.querySelector(".detail-layout .detail-columns:last-of-type");
+  let extendedSection = null;
   if (detailShell && inquirySection) {
-    const extendedSection = document.createElement("section");
+    extendedSection = document.createElement("section");
     extendedSection.className = "detail-sections-grid";
 
     const specificationRows = product.specifications
@@ -97,6 +98,98 @@
     `;
 
     detailShell.insertBefore(extendedSection, inquirySection);
+  }
+
+  if (detailShell && extendedSection) {
+    const contentSections = Array.from(detailShell.children).filter(
+      (node) => node.matches("section") && !node.classList.contains("detail-hero")
+    );
+
+    const overviewPrimary = contentSections[0];
+    const overviewSecondary = contentSections[1];
+    const technicalSection = contentSections[2];
+    const contactSection = contentSections[3];
+
+    if (overviewPrimary && overviewSecondary && technicalSection && contactSection) {
+      overviewPrimary.classList.add("detail-section-overview-primary");
+      overviewSecondary.classList.add("detail-section-overview-secondary");
+      technicalSection.classList.add("detail-section-technical");
+      contactSection.classList.add("detail-section-inquiry");
+
+      const tabs = [
+        {
+          id: "overview",
+          label: "Overview",
+          sections: [overviewPrimary, overviewSecondary]
+        },
+        {
+          id: "specifications",
+          label: "Specifications",
+          sections: [technicalSection]
+        },
+        {
+          id: "inquiry",
+          label: "Inquiry",
+          sections: [contactSection]
+        }
+      ];
+
+      const tabShell = document.createElement("section");
+      tabShell.className = "detail-tabs";
+
+      const tabList = document.createElement("div");
+      tabList.className = "detail-tab-list";
+      tabList.setAttribute("role", "tablist");
+
+      const panels = [];
+      const buttons = [];
+
+      tabs.forEach((tab, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "detail-tab-button";
+        button.textContent = tab.label;
+        button.id = `tab-${tab.id}`;
+        button.setAttribute("role", "tab");
+        button.setAttribute("aria-controls", `panel-${tab.id}`);
+        button.setAttribute("aria-selected", index === 0 ? "true" : "false");
+        if (index === 0) {
+          button.classList.add("is-active");
+        }
+        tabList.append(button);
+        buttons.push(button);
+
+        const panel = document.createElement("div");
+        panel.className = "detail-tab-panel";
+        panel.id = `panel-${tab.id}`;
+        panel.setAttribute("role", "tabpanel");
+        panel.setAttribute("aria-labelledby", button.id);
+        panel.hidden = index !== 0;
+        if (index === 0) {
+          panel.classList.add("is-active");
+        }
+
+        tab.sections.forEach((section) => panel.append(section));
+        tabShell.append(panel);
+        panels.push(panel);
+
+        button.addEventListener("click", () => {
+          buttons.forEach((item, itemIndex) => {
+            const active = itemIndex === index;
+            item.classList.toggle("is-active", active);
+            item.setAttribute("aria-selected", String(active));
+          });
+
+          panels.forEach((item, itemIndex) => {
+            const active = itemIndex === index;
+            item.classList.toggle("is-active", active);
+            item.hidden = !active;
+          });
+        });
+      });
+
+      detailShell.append(tabList, tabShell);
+    }
   }
 
   const form = document.querySelector(".inquiry-form");
