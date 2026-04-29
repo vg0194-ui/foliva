@@ -1,4 +1,4 @@
-(function () {
+﻿(function () {
   const site = window.FOLIVA_SITE;
   if (!site) {
     return;
@@ -13,8 +13,8 @@
       chips: ["Sustainable agriculture", "Crop nutrition", "Soil health"],
       stats: [
         { value: "4", label: "Core product platforms" },
-        { value: "20", label: "Products in the 2024 catalogue" },
-        { value: "28", label: "Catalogue pages" }
+        { value: "20", label: "Products across the portfolio" },
+        { value: "8", label: "Crop-specific kit solutions" }
       ],
       primaryHref: "products/index.html",
       primaryLabel: "Explore product solutions",
@@ -61,19 +61,19 @@
       quote:
         "Foliva is committed to revolutionizing the way fertilizers are produced and used to promote healthier ecosystems and enhance crop yields.",
       name: "Sustainable Agriculture",
-      role: "From the Foliva catalogue"
+      role: "Foliva sustainability platform"
     },
     {
       quote:
         "Founded on the principles of innovation, sustainability and environmental stewardship, Foliva offers fertilizers for diverse farming needs.",
       name: "Company Principles",
-      role: "From the About Us section"
+      role: "Foliva brand philosophy"
     },
     {
       quote:
         "Foliva's development approach combines research, natural ingredients, beneficial microorganisms and innovative technologies to optimize nutrient uptake and improve soil health.",
       name: "Research & Development",
-      role: "From the Foliva catalogue"
+      role: "Foliva innovation focus"
     }
   ];
 
@@ -422,3 +422,4 @@
   mountCropSolutions();
   mountCounters();
 })();
+

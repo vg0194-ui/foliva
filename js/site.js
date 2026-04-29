@@ -1,4 +1,27 @@
-(function () {
+﻿(function () {
+  document.querySelectorAll(".brand").forEach((brand) => {
+    if (!brand.querySelector(".brand-mark")) {
+      const mark = document.createElement("span");
+      mark.className = "brand-mark";
+      mark.setAttribute("aria-hidden", "true");
+      mark.textContent = "\u00AE";
+      brand.append(mark);
+    }
+  });
+
+  document.querySelectorAll(".footer-logo").forEach((logo) => {
+    const parent = logo.parentElement;
+    if (!parent || parent.querySelector(".footer-mark")) {
+      return;
+    }
+
+    const mark = document.createElement("span");
+    mark.className = "footer-mark";
+    mark.setAttribute("aria-hidden", "true");
+    mark.textContent = "\u00AE";
+    logo.insertAdjacentElement("afterend", mark);
+  });
+
   const navToggle = document.querySelector("#navToggle");
   const navMenu = document.querySelector("#navMenu");
 
@@ -51,3 +74,4 @@
     }
   }
 })();
+

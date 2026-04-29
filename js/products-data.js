@@ -1,4 +1,4 @@
-window.FOLIVA_SITE = {
+﻿window.FOLIVA_SITE = {
   whatsappNumber: "918690063336",
   salesEmail: "info@entornogreens.com",
   company: {
@@ -18,12 +18,12 @@ window.FOLIVA_SITE = {
       tag: "Fruit Set",
       image: "../assets/product-extracts/page-005-01-Im0.png",
       imageHome: "assets/product-extracts/page-005-01-Im0.png",
-      imageAlt: "FoliStar Wonder pack extracted from the catalogue",
+      imageAlt: "FoliStar Wonder product pack",
       palette: "linear-gradient(145deg, rgba(67,156,99,0.14), rgba(29,110,184,0.12))",
       description:
         "Calcium nitrate fortified with magnesium for foliar application, positioned for fruit set, crop quality and crop safety.",
       crops:
-        "Cereals, legumes, fruits and vegetables, cotton, sugarcane and other crops as referenced in the brochure.",
+        "Cereals, legumes, fruits and vegetables, cotton, sugarcane and other crop programs.",
       usage:
         "Used as a foliar application according to crop stage, especially around flowering, fruit set and fruit development.",
       benefits: [
@@ -61,14 +61,14 @@ window.FOLIVA_SITE = {
       tag: "Balanced NPK",
       image: "../assets/product-extracts/page-006-01-Im0.png",
       imageHome: "assets/product-extracts/page-006-01-Im0.png",
-      imageAlt: "FoliStar Booster 13-13-13 pack extracted from the catalogue",
+      imageAlt: "FoliStar Booster 13-13-13 product pack",
       palette: "linear-gradient(145deg, rgba(31,127,92,0.14), rgba(191,159,84,0.10))",
       description:
         "Balanced NPK liquid formulation positioned for vegetative growth, greener canopy and stronger root mass.",
       crops:
         "Cereals, legumes, fruits and vegetables, cotton, sugarcane and other field crops.",
       usage:
-        "Recommended in the brochure for initial stage sprays focused on green growth and vegetative development.",
+        "Recommended for initial stage sprays focused on green growth and vegetative development.",
       benefits: [
         "Promotes root mass and leaf area.",
         "Supports flower and fruit set.",
@@ -89,7 +89,7 @@ window.FOLIVA_SITE = {
         { label: "Moisture", value: "Max 0.5%" },
         { label: "Matter Insoluble in Water", value: "Max 0.5%" },
         { label: "Sodium as NaCl", value: "Max 0.5%" },
-        { label: "pH (1% solution)", value: "5 ± 1" },
+        { label: "pH (1% solution)", value: "5 +/- 1" },
         { label: "Bulk Density", value: "1.5 to 1.6" },
         { label: "Lead", value: "Max 0.003%" },
         { label: "Cadmium", value: "Max 0.0025%" },
@@ -112,7 +112,7 @@ window.FOLIVA_SITE = {
       tag: "Reproductive Stage",
       image: "../assets/product-extracts/page-007-02-Im1.png",
       imageHome: "assets/product-extracts/page-007-02-Im1.png",
-      imageAlt: "FoliStar Tarzen 5-0-23 pack extracted from the catalogue",
+      imageAlt: "FoliStar Tarzen 5-0-23 product pack",
       palette: "linear-gradient(145deg, rgba(18,62,109,0.14), rgba(31,127,92,0.12))",
       description:
         "Potassium-forward foliar formulation positioned around flowering, fruit formation, grain filling and fruit quality.",
@@ -127,7 +127,7 @@ window.FOLIVA_SITE = {
         "Supports crop tolerance toward abiotic stress."
       ],
       includes: [
-        "5-0-23 positioning from the brochure.",
+        "Balanced 5-0-23 nutrition for reproductive and quality-focused crop programs.",
         "Focused on reproductive crop stages.",
         "Useful in crop quality improvement programs."
       ],
@@ -143,7 +143,7 @@ window.FOLIVA_SITE = {
         { label: "Lead", value: "Max 0.003%" },
         { label: "Cadmium", value: "Max 0.0025%" },
         { label: "Arsenic", value: "Max 0.01%" },
-        { label: "pH", value: "5 ± 1" },
+        { label: "pH", value: "5 +/- 1" },
         { label: "Bulk Density", value: "1.5 to 1.6" }
       ],
       applicationNotes: [
@@ -163,12 +163,12 @@ window.FOLIVA_SITE = {
       tag: "Micronutrients",
       image: "../assets/product-extracts/page-008-01-Im0.png",
       imageHome: "assets/product-extracts/page-008-01-Im0.png",
-      imageAlt: "FoliStar Power Plus pack extracted from the catalogue",
+      imageAlt: "FoliStar Power Plus product pack",
       palette: "linear-gradient(145deg, rgba(29,110,184,0.14), rgba(191,159,84,0.10))",
       description:
         "Multi-micronutrient foliar fertilizer positioned to improve photosynthesis, leaf health and quality expression.",
       crops:
-        "Cereals, legumes, fruits and vegetables, cotton, sugarcane and similar crops referenced in the brochure.",
+        "Cereals, legumes, fruits and vegetables, cotton, sugarcane and similar crop programs.",
       usage:
         "Used as a foliar micronutrient support product where quality, greenness and balanced plant processes are priorities.",
       benefits: [
@@ -207,19 +207,19 @@ window.FOLIVA_SITE = {
       tag: "Deficiency Correction",
       image: "../assets/product-extracts/page-009-01-Im0.png",
       imageHome: "assets/product-extracts/page-009-01-Im0.png",
-      imageAlt: "FoliStar Zinc Oxide Suspension pack extracted from the catalogue",
+      imageAlt: "FoliStar Zinc Oxide Suspension product pack",
       palette: "linear-gradient(145deg, rgba(31,127,92,0.14), rgba(18,62,109,0.14))",
       description:
         "High-zinc suspension formulated for deficiency correction, crop quality support and enzyme-related plant processes.",
       crops:
-        "Cereals, legumes, fruits and vegetables, cotton, sugarcane and other crops referenced in the brochure.",
+        "Cereals, legumes, fruits and vegetables, cotton, sugarcane and other crop programs.",
       usage:
         "Used where rapid zinc deficiency correction and zinc nutrition support are required.",
       benefits: [
         "Contains 39.5 percent minimum zinc.",
         "Supports enzymes that regulate plant life processes.",
         "Helps address zinc deficiency quickly.",
-        "Referenced in the brochure for organic farming suitability."
+        "Suitable for organic farming programs where applicable."
       ],
       includes: [
         "Dense suspension concentrate of liquid zinc.",
@@ -228,7 +228,7 @@ window.FOLIVA_SITE = {
       ],
       specifications: [
         { label: "Zinc", value: "39.5%" },
-        { label: "pH (5% solution)", value: "9.0 ± 1" },
+        { label: "pH (5% solution)", value: "9.0 +/- 1" },
         { label: "Arsenic", value: "0.001%" },
         { label: "Lead", value: "0.003%" },
         { label: "Specific Gravity", value: "1.71 - 1.75" },
@@ -251,14 +251,14 @@ window.FOLIVA_SITE = {
       tag: "Calcium + Boron",
       image: "../assets/product-extracts/page-011-01-Im0.png",
       imageHome: "assets/product-extracts/page-011-01-Im0.png",
-      imageAlt: "FoliVita Boronated Calcium Nitrate pack extracted from the catalogue",
+      imageAlt: "FoliVita Boronated Calcium Nitrate product pack",
       palette: "linear-gradient(145deg, rgba(191,159,84,0.12), rgba(31,127,92,0.14))",
       description:
         "Water soluble nutrition solution positioned for flowering, fertilization, fruit set and product quality improvement.",
       crops:
         "Used for crop development with strong relevance to fruits and vegetables, along with broader crop programs.",
       usage:
-        "The brochure references both soil application and foliar use depending on crop and acreage.",
+        "Suitable for both soil application and foliar use depending on crop stage and acreage.",
       benefits: [
         "Supports flowering, fertilization and fruit set.",
         "Provides calcium and boron together.",
@@ -292,7 +292,7 @@ window.FOLIVA_SITE = {
       tag: "Secondary Nutrients",
       image: "../assets/product-extracts/page-012-01-Im0.png",
       imageHome: "assets/product-extracts/page-012-01-Im0.png",
-      imageAlt: "FoliVita Magnesium Sulphate pack extracted from the catalogue",
+      imageAlt: "FoliVita Magnesium Sulphate product pack",
       palette: "linear-gradient(145deg, rgba(29,110,184,0.12), rgba(31,127,92,0.12))",
       description:
         "Magnesium and sulphur based water soluble fertilizer positioned to maintain chlorophyll, greenness and plant metabolism.",
@@ -336,7 +336,7 @@ window.FOLIVA_SITE = {
       tag: "Zinc Nutrition",
       image: "../assets/product-extracts/page-013-01-Im0.png",
       imageHome: "assets/product-extracts/page-013-01-Im0.png",
-      imageAlt: "FoliVita Zinc Sulphate Monohydrate pack extracted from the catalogue",
+      imageAlt: "FoliVita Zinc Sulphate Monohydrate product pack",
       palette: "linear-gradient(145deg, rgba(31,127,92,0.14), rgba(191,159,84,0.10))",
       description:
         "Water soluble zinc and sulphur source positioned for zinc nutrition, plant enzyme support and urea efficiency.",
@@ -379,7 +379,7 @@ window.FOLIVA_SITE = {
       tag: "Micronutrients",
       image: "../assets/product-extracts/page-014-02-Im1.png",
       imageHome: "assets/product-extracts/page-014-02-Im1.png",
-      imageAlt: "FoliVita Power Plus pack extracted from the catalogue",
+      imageAlt: "FoliVita Power Plus product pack",
       palette: "linear-gradient(145deg, rgba(18,62,109,0.12), rgba(31,127,92,0.14))",
       description:
         "Water soluble micronutrient mix positioned to improve flower and fruit quality, leaf health and production performance.",
@@ -408,7 +408,7 @@ window.FOLIVA_SITE = {
       ],
       applicationNotes: [
         "Soil application: 5 kg per acre.",
-        "Foliar application is not specified on this page; use brochure guidance for water soluble micronutrient programs."
+        "Foliar application should follow crop-stage requirements and local agronomy guidance for water soluble micronutrient programs."
       ]
     },
     {
@@ -421,12 +421,12 @@ window.FOLIVA_SITE = {
       tag: "Calcium",
       image: "../assets/product-extracts/page-015-01-Im0.png",
       imageHome: "assets/product-extracts/page-015-01-Im0.png",
-      imageAlt: "FoliVita Calcium Nitrate pack extracted from the catalogue",
+      imageAlt: "FoliVita Calcium Nitrate product pack",
       palette: "linear-gradient(145deg, rgba(191,159,84,0.10), rgba(29,110,184,0.12))",
       description:
         "Calcium and nitrogen based water soluble fertilizer positioned for structural strength, flowering and fruit development.",
       crops:
-        "Used in crop development and flowering programs with soil and foliar references in the brochure.",
+        "Used in crop development and flowering programs across soil and foliar nutrition schedules.",
       usage:
         "Applied based on acreage and crop stage for structural strength, flowering and fruit support.",
       benefits: [
@@ -462,14 +462,14 @@ window.FOLIVA_SITE = {
       tag: "Soil Health",
       image: "../assets/product-extracts/page-017-01-Im0.png",
       imageHome: "assets/product-extracts/page-017-01-Im0.png",
-      imageAlt: "FoliZyme Crop Plus pack extracted from the catalogue",
+      imageAlt: "FoliZyme Crop Plus product pack",
       palette: "linear-gradient(145deg, rgba(31,127,92,0.16), rgba(18,62,109,0.10))",
       description:
         "Granular organic soil conditioner positioned to improve vigour, disease resistance, soil structure and root architecture.",
       crops:
         "Broad crop applicability based on field condition and soil requirement.",
       usage:
-        "The brochure references soil application per acre as basal application or irrigation-stage support.",
+        "Designed for per-acre soil application as basal nutrition or irrigation-stage support.",
       benefits: [
         "Improves immunity against disease and pests.",
         "Provides macro and micronutrients in absorbable form.",
@@ -507,14 +507,14 @@ window.FOLIVA_SITE = {
       tag: "Vegetable Solutions",
       image: "../assets/product-extracts/page-018-01-Im0.png",
       imageHome: "assets/product-extracts/page-018-01-Im0.png",
-      imageAlt: "FoliZyme Vegetable Plus pack extracted from the catalogue",
+      imageAlt: "FoliZyme Vegetable Plus product pack",
       palette: "linear-gradient(145deg, rgba(29,110,184,0.12), rgba(31,127,92,0.16))",
       description:
         "Granular soil conditioner positioned for vegetable and fruit development, pigmentation, size and resilience.",
       crops:
         "Recommended crops: all vegetable crops.",
       usage:
-        "The brochure references acreage-based soil application during basal or irrigation timing.",
+        "Designed for acreage-based soil application during basal or irrigation timing.",
       benefits: [
         "Formulated for better vegetable and fruit development.",
         "Enhances fruit weight, pigmentation and size.",
@@ -552,13 +552,13 @@ window.FOLIVA_SITE = {
       tag: "For 1 Acre",
       image: "../assets/product-extracts/page-020-02-Im1.png",
       imageHome: "assets/product-extracts/page-020-02-Im1.png",
-      imageAlt: "FoliKit Groundnut box extracted from the catalogue",
+      imageAlt: "FoliKit Groundnut crop kit pack",
       palette: "linear-gradient(145deg, rgba(191,159,84,0.12), rgba(31,127,92,0.12))",
       description:
         "Crop-specific kit positioned for oil percentage, root development, crop quality and balanced nutrition in groundnut.",
       crops: "Groundnut.",
       usage:
-        "The brochure suggests 2 to 3 applications around flowering stage and grain fill time.",
+        "Recommended for 2 to 3 applications around flowering stage and grain fill time.",
       benefits: [
         "Helps increase oil percentage.",
         "Supports fibrous root development.",
@@ -591,13 +591,13 @@ window.FOLIVA_SITE = {
       tag: "For 1 Acre",
       image: "../assets/product-extracts/page-021-01-Im0.png",
       imageHome: "assets/product-extracts/page-021-01-Im0.png",
-      imageAlt: "FoliKit Pulses box extracted from the catalogue",
+      imageAlt: "FoliKit Pulses crop kit pack",
       palette: "linear-gradient(145deg, rgba(29,110,184,0.14), rgba(191,159,84,0.10))",
       description:
         "Crop-specific kit positioned around leaf development, grain quality, dry weight and immune support in pulses.",
       crops: "Pulses.",
       usage:
-        "The brochure suggests 2 to 3 applications around flowering and grain fill stages.",
+        "Recommended for 2 to 3 applications around flowering and grain fill stages.",
       benefits: [
         "Increases dry weight and yield parameters.",
         "Improves leaf size and thickness.",
@@ -630,13 +630,13 @@ window.FOLIVA_SITE = {
       tag: "For 1 Acre",
       image: "../assets/product-extracts/page-022-01-Im0.png",
       imageHome: "assets/product-extracts/page-022-01-Im0.png",
-      imageAlt: "FoliKit Paddy box extracted from the catalogue",
+      imageAlt: "FoliKit Paddy crop kit pack",
       palette: "linear-gradient(145deg, rgba(31,127,92,0.12), rgba(18,62,109,0.12))",
       description:
         "Crop-specific kit positioned around immunity, soil ecology, root architecture and better crop quality for paddy.",
       crops: "Paddy.",
       usage:
-        "The brochure suggests 2 to 3 applications around flowering stage and grain fill time.",
+        "Recommended for 2 to 3 applications around flowering stage and grain fill time.",
       benefits: [
         "Supports disease and pest resistance.",
         "Provides macro and micronutrients in absorbable form.",
@@ -669,13 +669,13 @@ window.FOLIVA_SITE = {
       tag: "For 1 Acre",
       image: "../assets/product-extracts/page-023-01-Im0.png",
       imageHome: "assets/product-extracts/page-023-01-Im0.png",
-      imageAlt: "FoliKit Vegetable box extracted from the catalogue",
+      imageAlt: "FoliKit Vegetable crop kit pack",
       palette: "linear-gradient(145deg, rgba(31,127,92,0.15), rgba(191,159,84,0.11))",
       description:
         "Crop-specific kit positioned for fruit quantity, size, pigmentation, root development and reduced flower drop.",
       crops: "Vegetables.",
       usage:
-        "The brochure references 4 to 5 applications between flowering and fruit fill with 10 to 15 day intervals.",
+        "Recommended for 4 to 5 applications between flowering and fruit fill with 10 to 15 day intervals.",
       benefits: [
         "Improves quantity, size and weight of fruit.",
         "Supports vigorous root development.",
@@ -710,13 +710,13 @@ window.FOLIVA_SITE = {
       tag: "For 1 Acre",
       image: "../assets/product-extracts/page-024-02-Im1.png",
       imageHome: "assets/product-extracts/page-024-02-Im1.png",
-      imageAlt: "FoliKit Mustard box extracted from the catalogue",
+      imageAlt: "FoliKit Mustard crop kit pack",
       palette: "linear-gradient(145deg, rgba(191,159,84,0.10), rgba(18,62,109,0.12))",
       description:
         "Crop-specific kit positioned for oil content, healthy blossoming, drought resistance and grain boldness in mustard.",
       crops: "Mustard.",
       usage:
-        "The brochure suggests 2 to 3 applications around flowering stage and grain fill time.",
+        "Recommended for 2 to 3 applications around flowering stage and grain fill time.",
       benefits: [
         "Supports oil content improvement.",
         "Promotes healthy plant blossoming.",
@@ -749,13 +749,13 @@ window.FOLIVA_SITE = {
       tag: "For 1 Acre",
       image: "../assets/product-extracts/page-025-02-Im1.png",
       imageHome: "assets/product-extracts/page-025-02-Im1.png",
-      imageAlt: "FoliKit Soyabean box extracted from the catalogue",
+      imageAlt: "FoliKit Soyabean crop kit pack",
       palette: "linear-gradient(145deg, rgba(31,127,92,0.14), rgba(29,110,184,0.12))",
       description:
         "Crop-specific kit positioned to improve soyabean yield, reduce pod drop and strengthen roots and nutrient uptake.",
       crops: "Soyabean.",
       usage:
-        "The brochure suggests 2 to 3 applications around flowering stage and grain fill time.",
+        "Recommended for 2 to 3 applications around flowering stage and grain fill time.",
       benefits: [
         "Enhances crop yield and farmer benefit.",
         "Reduces immature flower and pod drop.",
@@ -788,13 +788,13 @@ window.FOLIVA_SITE = {
       tag: "For 1 Acre",
       image: "../assets/product-extracts/page-026-02-Im1.png",
       imageHome: "assets/product-extracts/page-026-02-Im1.png",
-      imageAlt: "FoliKit Fruits box extracted from the catalogue",
+      imageAlt: "FoliKit Fruits crop kit pack",
       palette: "linear-gradient(145deg, rgba(191,159,84,0.12), rgba(31,127,92,0.14))",
       description:
         "Crop-specific kit positioned for fruit colour, fruit size, flowering, photosynthesis and productivity support.",
       crops: "Fruits.",
       usage:
-        "Positioned in the brochure for fruit colour, size and yield improvement.",
+        "Positioned for fruit colour, size and yield improvement.",
       benefits: [
         "Improves quality and productivity of crops.",
         "Supports sugar transportation and photosynthesis.",
@@ -826,13 +826,13 @@ window.FOLIVA_SITE = {
       tag: "For 1 Acre",
       image: "../assets/product-extracts/page-027-01-Im0.png",
       imageHome: "assets/product-extracts/page-027-01-Im0.png",
-      imageAlt: "FoliKit Grains box extracted from the catalogue",
+      imageAlt: "FoliKit Grains crop kit pack",
       palette: "linear-gradient(145deg, rgba(18,62,109,0.12), rgba(191,159,84,0.10))",
       description:
         "Crop-specific kit positioned to improve grain formation, grain filling, nutrient availability and root development.",
       crops: "Grains.",
       usage:
-        "Positioned in the brochure for grain formation and grain filling support.",
+        "Positioned for grain formation and grain filling support.",
       benefits: [
         "Increases dry weight and yield parameters.",
         "Improves nutrient availability.",
@@ -856,3 +856,5 @@ window.FOLIVA_SITE = {
     }
   ]
 };
+
+
